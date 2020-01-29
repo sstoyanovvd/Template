@@ -1,0 +1,37 @@
+/* ------------------------------------------------------------ *\
+	Header
+\* ------------------------------------------------------------ */
+
+.header {	
+	background: transparent;
+	padding: 2.5rem 0;
+    position: fixed; 
+    top:0; 
+    left:0;
+    width: 100%;
+    z-index: 10;
+
+	.shell {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	@media(max-width:$responsive-sm) {
+		padding: 1rem 0;
+	}
+
+	.btn {
+		@media(max-width:$responsive-sm) {
+		display: none;
+		}	/* 1023px */
+	}
+}
+
+.header-fixed {
+	background: linear-gradient(90deg, rgba(34,138,195,1) 60%, rgba(38,239,213,1) 100%);
+	padding: 1rem 0;
+	transition: .6s;
+}
+
+

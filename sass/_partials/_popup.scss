@@ -1,0 +1,79 @@
+/* ------------------------------------------------------------ *\
+	Magnific Popup
+\* ------------------------------------------------------------ */
+
+.mfp-bg {
+	background: #000;
+	opacity: 0.7;
+}
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+	width: auto;
+}
+
+.mfp-close {
+	top: 5px;
+	right: 5px;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+	opacity: 1;
+	color: $white;
+
+	&:active {
+		top: 5px;
+	}
+}
+
+.mfp-close-btn-in .mfp-close {
+	color: $white;
+}
+
+/* ------------------------------------------------------------ *\
+	Popup
+\* ------------------------------------------------------------ */
+
+.popup {
+	width: 100%;
+	margin: 0 auto;
+	background: #fff;
+
+	.popup-head {
+		padding: 28px;
+		background: $black;
+		text-align: center;
+	}
+
+	.popup-title {
+		line-height: 1.71;
+		color: $white;
+	}
+
+	.popup-body {
+		padding: 22px 25px;
+	}
+
+	/*  Popup Medium  */
+
+	&-medium {
+		width: 640px;
+		img {
+			max-width: 100%;
+		}
+		.package-large .package-image {
+			margin-left: 0;
+		}
+	}
+
+	@media #{$mobile} {
+		&-medium {
+			width: 100%;
+		}
+
+		.popup-head,
+		.popup-body {
+			padding: 25px 10px;
+		}
+	}
+}

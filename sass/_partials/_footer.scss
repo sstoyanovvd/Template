@@ -1,0 +1,131 @@
+/* ------------------------------------------------------------ *\
+	Footer
+\* ------------------------------------------------------------ */
+
+.footer {
+	padding-top: 7rem;
+	padding-bottom: 7rem;
+
+	@media(max-width:$responsive-xs) {
+		padding-top: 0;
+		padding-bottom: 2rem;
+	}	/* 767px */
+
+
+	.cols {
+		.shell {
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+			padding-bottom: 60px;
+
+			@media(max-width:$responsive-xs) {
+				flex-wrap: wrap;
+			}	/* 767px */
+		}
+
+		.col {
+
+			a {
+				&:hover {
+					text-decoration: none;
+					color: #20add0;
+				}
+
+			}
+			max-width: 25%;
+			padding-right: 10px;
+
+			@media(max-width:$responsive-xs) {
+				min-width: 100%;
+				padding-right: 0;
+			}	/* 767px */
+
+			@media(max-width:$responsive-xs) {
+				margin: 2rem auto;
+			}	/* 479px */
+
+			&:nth-child(2) {
+				@media(max-width:$responsive-xs) {
+					margin-top: 0;
+				}	/* 767px */
+			}
+
+			&:nth-child(3) {
+				.form {
+					margin-bottom: 0.86rem;
+				}
+
+				form {
+					display: flex;
+					justify-content: space-between;
+
+					.form__body {
+						font-size: 0.86rem; 
+						line-height: 1.43rem;
+						width: 100%;
+
+
+						input {
+							padding: 7px;
+							border: 1px solid #c4c4c4;
+							width: 100%;
+						} 
+					}
+
+					.form__actions {
+						input {
+							background: #0a405f;
+							border: none;
+							color: #fff;
+							height: 100%;
+							width: 50px;
+						}
+					}
+				}
+
+				p {
+					font-size: 0.86rem; 
+					line-height: 1.43rem;
+				}
+			}
+
+			&:nth-child(4) {
+				margin-left: 5rem;
+
+				@media(max-width:$responsive-xs) {
+					margin-left: 1.5rem;
+				}	/* 767px */
+			}
+		}
+	}
+
+	.footer__bar {
+		border-top: 1px solid #a9a9a9;
+		padding-top: 30px;
+		
+		.shell {
+			display: flex;
+			justify-content: space-between;
+
+			@media(max-width:$responsive-xxs) {
+				flex-direction: column;
+				align-items: center;
+			}	/* 479px */
+		}
+		.footer__copyrights {
+			width: 23%;
+			display: flex;
+			justify-content: space-between;
+
+			@media(max-width:$responsive-md) {
+				min-width: 260px;
+			}	/* 1200px */
+
+			@media(max-width:$responsive-xxs) {
+				margin-top: 2rem;
+
+			}	/* 479px */
+		}
+	}
+}

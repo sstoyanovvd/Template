@@ -1,0 +1,187 @@
+/* ------------------------------------------------------------ *\
+	Callout
+\* ------------------------------------------------------------ */
+
+.section-callout {
+	background: linear-gradient(90deg, rgba(34,138,195,1) 60%, rgba(38,239,213,1) 100%);
+	padding: 4.6rem 0;
+
+	@media(max-width:$responsive-xs) {
+		padding-top: 0.5rem;
+		padding-bottom: 2rem;
+	}	/* 767px */
+
+	.shell {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		@media(max-width:$responsive-sm) {
+			flex-direction: column;
+			text-align: center;			
+		}	/* 1023px */		
+	}
+
+	.section__head {
+		width: 55%;
+		color: #fff;
+		margin-right: 4.29rem;
+		margin-left: 2.14rem;
+
+		@media(max-width:$responsive-sm) {
+			margin-bottom: 2rem;
+		}	/* 1023px */
+
+		@media(max-width:$responsive-xs) {
+			width: 100%;
+			margin:  1rem auto;
+		}	/* 767px */
+
+		h2 {
+			@media(max-width:$responsive-xs) {
+				font-size: 25px; 
+		}	/* 767px */	
+		}
+
+		p {
+			font-size: 1.29rem; 
+			line-height: 1.93rem;
+
+			@media(max-width:$responsive-xs) {
+				font-size: 14px; 
+		}	/* 767px */	
+		}
+	}
+
+	&--first {
+		margin-top: 6rem;
+		margin-bottom: 4rem;
+		position: relative;
+
+		&:after {
+			content: ('');
+			width: 100%;
+			max-width: 700px;
+			height: 180px;
+			background-image: url("images/temp/dots-callout.png");
+			display: block;	
+			position: absolute;
+			top: 0;
+			left:61%;
+			z-index: 0;
+		}			
+	}
+
+	&--secondary {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+		position: relative;
+
+		&:after {
+			content: ('');
+			width: 100%;
+			max-width: 380px;
+			height: 117px;
+			background-image: url("images/temp/dots-callout-2.png");
+			display: block;	
+			position: absolute;
+			bottom: 0;
+			left:61%;
+			z-index: 1;
+		}			
+	}
+
+	&--third {
+		padding-top: 4.87rem;
+		padding-bottom: 4.92rem;
+		position: relative;
+		
+		@media(max-width:$responsive-xs) {
+			padding-top: 1rem;
+			padding-bottom: 2rem;
+		}	/* 767px */
+
+		&:before {
+				content:'';
+				width: 100%;
+				max-width: 780px;
+				height: 100%;
+				background-image: url(images/temp/callout-3-right.png);
+				background-repeat: no-repeat;
+				display: block;
+				position: absolute;
+				bottom: 0;
+				right: -22%;
+		}		
+
+		&:after {
+			content:'';
+			width: 100%;
+			max-width: 740px;
+			height: 100%;
+			background-image: url(images/temp/callout-3-center.png);
+			background-repeat: no-repeat;
+			display: block;
+			position: absolute;
+			bottom: -93px;
+			left: 66.5%;		
+				
+		}
+		.shell {
+			width: 100%;
+			position: relative;
+
+			&:before {
+				content:'';
+				width: 100%;
+				max-width: 780px;
+				height: 100%;
+				background-image: url(images/temp/callout-3-left.png);
+				background-repeat: no-repeat;
+				display: block;
+				position: absolute;
+				bottom: 70px;
+				left: 76%;
+		}		
+
+		}
+		.section__image {
+			position: absolute;
+			left: -2%;
+
+			@media(max-width:$responsive-sm) {
+				visibility: hidden;
+			}	/* 1023px */
+		}
+
+		.section__content {
+			width: 100%;
+			text-align: center;
+			margin: auto;
+			z-index: 2;
+
+			.section__head {
+				width: 100%;
+				max-width: 520px;
+				display: inline-block;
+				margin-bottom: 3.21rem;
+
+				@media(max-width:$responsive-xs) {
+					width: 80%;
+					margin: 2rem auto;
+				}	/* 767px */
+
+				h2 {
+					text-shadow: 2px 2px #000;
+				}
+
+				p {
+					font-size: 1.29rem; 
+					line-height: 1.93rem;
+					margin-top: 1.43rem;
+					text-shadow: 2px 2px #000;
+				}
+			}
+		}
+	}
+}

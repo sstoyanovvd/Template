@@ -1,0 +1,31 @@
+/* ------------------------------------------------------------ *\
+	Variables
+\* ------------------------------------------------------------ */
+
+/*  Base Font  */
+$base-font-family: Poppins, sans-serif;
+$base-font-size: 14px;
+$base-line-height: 1;
+
+/*  Shell  */
+$shell-width: 1170px;
+$shell-gutter: 20px;
+$shell: $shell-width + $shell-gutter * 2;
+
+/*  Media Queries  */
+$responsive-xxs: 479px;
+$responsive-xs: 767px;
+$responsive-sm: 1023px;
+$responsive-md: 1200px;
+
+$mobile-small: '(max-width: $responsive-xxs) ';
+$mobile: '(max-width: $responsive-xs) ';
+$tablet-portrait: '(max-width: $responsive-sm) ';
+$small-desktop: '(max-width: $responsive-md) ';
+$retina: '(min-resolution: 2dppx) ';
+
+//@media #{$small-desktop}
+
+/*  Colours  */
+$white: #fff;
+$black: #000;

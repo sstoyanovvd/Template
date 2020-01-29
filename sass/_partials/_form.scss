@@ -1,0 +1,379 @@
+/* ------------------------------------------------------------ *\
+	Form
+\* ------------------------------------------------------------ */
+
+.wpcf7 {
+	font-family: $base-font-family;
+
+	p {
+		margin-bottom: 23px;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.form-cols {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.form-col {
+		max-width: 50%;
+		flex: 0 0 50%;
+	}
+
+	.wpcf7-form-control-wrap,
+	.wpcf7-form-control {
+		position: relative;
+		display: block;
+		width: 100%;
+	}
+
+	.wpcf7-form-control-wrap [class*='tip'] {
+		position: absolute;
+		top: calc(50% + 5px);
+		right: 0;
+		transform: translateY(-50%);
+		font-size: 0;
+		line-height: 0;
+		visibility: hidden;
+		opacity: 0;
+		transition: visibility 0.3s, opacity 0.3s;
+	}
+
+	[class*='tip'].wpcf7-not-valid-tip:before {
+		content: '*';
+		display: inline-block;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 20px;
+		color: #f9593a;
+	}
+
+	[class*='tip'].wpcf7-valid-tip:before {
+		content: '';
+		display: inline-block;
+		width: 19px;
+		height: 13px;
+		background: url(css/images/icons/ico-check.png) no-repeat 0 0;
+	}
+
+	.wpcf7-form-control-wrap:not([class*='acceptance']) {
+		padding: 0;
+		background: $white;
+	}
+
+	.wpcf7-form-control {
+		appearance: none;
+		width: 100%;
+		padding: 15px 22px;
+		border-radius: 5px;
+		border: 1px solid $black;
+		font-size: 16px;
+		line-height: 1.2;
+		transition: color 0.3s;
+
+		&::placeholder {
+			color: #9fa3a7;
+			transition: color 0.3s;
+		}
+
+		&:focus,
+		&:focus::placeholder {
+			color: #000;
+		}
+
+		&.wpcf7-not-valid {
+			border-bottom-color: #f9593a;
+		}
+
+		&.wpcf7-not-valid::placeholder {
+			color: #f9593a;
+		}
+
+		&.wpcf7-not-valid ~ .wpcf7-not-valid-tip {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		&.wpcf7-valid ~ .wpcf7-valid-tip {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.screen-reader-response {
+		margin-bottom: 40px;
+		font-size: 16px;
+		line-height: 1.2;
+
+		p {
+			margin-bottom: 0;
+			margin-top: 21px;
+		}
+	}
+
+	[class*='menu'] {
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 4px;
+			bottom: 4px;
+			right: 33px;
+			z-index: 10;
+			width: 40px;
+			border-left: 1px solid #aaa;
+			background-color: transparent;
+			pointer-events: none;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 45px;
+			width: 12px;
+			height: 7px;
+			background: url(css/images/icons/ico-arrow-down.png) no-repeat 0 0;
+			transform: translateY(-50%);
+			pointer-events: none;
+		}
+
+		select {
+			white-space: normal;
+			cursor: pointer;
+			border-radius: 0;
+			background: none;
+
+			&::-ms-expand {
+				display: none;
+			}
+
+			option {
+				color: #000;
+			}
+		}
+	}
+
+	.wpcf7-acceptance {
+		padding: 0;
+		border: 0;
+	}
+
+	.wpcf7-list-item {
+		position: relative;
+		display: inline-block;
+
+		label {
+			display: inline-block;
+		}
+
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			z-index: -1;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		a {
+			text-decoration: underline;
+			color: $black;
+		}
+
+		.wpcf7-list-item-label {
+			position: relative;
+			display: inline-block;
+			min-height: 31px;
+			padding: 10px 0 10px 58px;
+			cursor: pointer;
+			font-size: 14px;
+			line-height: 1.8;
+			color: #000;
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 5px;
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				border: 1px solid $black;
+				margin-top: -16px;
+				transition: border-color 0.3s, background 0.3s;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 14px;
+				width: 16px;
+				height: 12px;
+				background: url(../css/images/icons/ico-check-white@2x.png)
+					no-repeat 0 0;
+				background-size: 100% 100%;
+				transform: translateY(-50%) scale(0.3) rotate(180deg);
+				opacity: 0;
+				visibility: hidden;
+				transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+			}
+		}
+
+		input:checked ~ .wpcf7-list-item-label:before {
+			border-color: $black;
+			background: $black;
+		}
+
+		input:checked ~ .wpcf7-list-item-label:after {
+			transform: translateY(-50%) scale(1) rotate(0deg);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	.wpcf7-submit {
+		position: relative;
+		display: inline-block;
+		padding: 10px 15px;
+		border: 1px solid #cdbb88;
+		background: $white;
+		text-transform: uppercase;
+		text-align: center;
+		cursor: pointer;
+		appearance: none;
+		color: #cdbb88;
+		transition: border-color 0.3s, background 0.3s, color 0.3s;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			background: #cdbb88;
+			color: $white;
+		}
+	}
+
+	.wpcf7-response-output {
+		display: none;
+	}
+
+	&.form-contact {
+		.wpcf7-form {
+			position: relative;
+			max-width: 550px;
+		}
+
+		.wpcf7-form-control {
+			border: 0;
+		}
+
+		.telefone {
+			input {
+				width: calc(100% - 190px);
+			}
+		}
+
+		.wpcf7-form-control-wrap:not([class*='acceptance']) {
+			padding: 4px;
+			background: $white;
+		}
+
+		[class*='acceptance'] {
+			background-color: transparent;
+		}
+
+		.wpcf7-submit {
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			max-width: 190px;
+			border-radius: 0 5px 5px 0;
+		}
+	}
+
+	@media #{$tablet-portrait} {
+		p {
+			margin-bottom: 15px;
+		}
+
+		.screen-reader-response {
+			margin-bottom: 30px;
+			font-size: 14px;
+		}
+
+		.wpcf7-acceptance {
+			padding: 0;
+		}
+
+		&.form-contact {
+			.wpcf7-form-control:not(.wpcf7-acceptance) {
+				padding: 10px;
+				font-size: 14px;
+			}
+
+			.telefone {
+				input {
+					width: calc(100% - 150px);
+				}
+			}
+
+			.wpcf7-submit {
+				padding: 10px 20px;
+				max-width: 150px;
+			}
+		}
+	}
+
+	@media #{$mobile} {
+		.screen-reader-response {
+			font-size: 12px;
+
+			p {
+				margin-top: 10px;
+			}
+		}
+
+		.wpcf7-form-control:not(.wpcf7-acceptance) {
+			padding: 15px;
+			font-size: 14px;
+		}
+
+		&.form-contact {
+			.wpcf7-form {
+				max-width: 100%;
+			}
+		}
+
+		.wpcf7-list-item {
+			.wpcf7-list-item-label {
+				font-size: 12px;
+			}
+		}
+	}
+
+	@media #{$mobile-small} {
+		&.form-contact {
+			.wpcf7-form-control:not(.wpcf7-acceptance) {
+				padding: 11px 5px;
+			}
+
+			.telefone {
+				input {
+					width: calc(100% - 100px);
+				}
+			}
+
+			.wpcf7-submit {
+				padding: 12px 10px !important;
+				max-width: 100px;
+				font-size: 12px !important;
+			}
+		}
+	}
+}
